@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counter</title>
+
+        <style>
+            #counter {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+
+                font-size: 100px;
+                font-family: sans-serif;
+            }
+
+            body html {
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+
+                background-color: dimgray;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="counter"></p>
+
+        <script>
+            var counterElement = document.getElementById("counter");
+
+            // Get current date
+            var currentDate = new Date();
+
+            // Calculate number of days since 27th Sep 2022
+            var daysSince = Math.floor(
+                (currentDate - new Date(2022, 8, 27)) / 1000 / 60 / 60 / 24
+            );
+
+            // Update counter
+            counterElement.innerHTML = daysSince + 25;
+        </script>
+    </body>
+</html>
